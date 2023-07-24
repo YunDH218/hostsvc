@@ -1,0 +1,16 @@
+name: Docker Service CI
+
+# 이벤트
+on:
+  push:
+    branches: [ "main" ]
+    paths: ["*.js"]
+
+jobs:
+  buildImage:
+    # 우분투를 기반으로 이미지를 빌드한다
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
