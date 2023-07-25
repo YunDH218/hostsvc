@@ -37,7 +37,7 @@ jobs:
 
       - name: 2. Change Docker Tag
         run: |
-          sed -i "s/images: 3500ml\/node-app:.*/images: 3500ml\/node-app:${{ github.sha }}/g" hostservice-deploy.yaml
+          sed -i "s/images: 3500ml\/hostservice:.*/images: 3500ml\/hostservice:${{ github.sha }}/g" hostservice-deploy.yaml
           git config --global user.email "dbseogns9779@gmail.com"
           git config --global user.name "YunDH218"
           git add .
